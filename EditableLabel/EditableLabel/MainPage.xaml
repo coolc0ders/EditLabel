@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EditableLabel"
+             x:Class="EditableLabel.MainPage"
+             x:Name="this">
+
+    <ContentPage.Resources> 
+        <ResourceDictionary >
+            <Label x:Key="Label1" FontAttributes="Bold" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout VerticalOptions="Start" HorizontalOptions="Center" Margin="0,30,0,0">
+        <local:EditableLabel Text="Big Great Title, Tap Me Please" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold"/>
+        <local:EditableLabel Text="{Binding Text, Source={x:Reference Entry1}, Mode=TwoWay}"/>
+        <Entry x:Name="Entry1" Placeholder="Enter Text Here"/>
+    </StackLayout>
+
+</ContentPage>
